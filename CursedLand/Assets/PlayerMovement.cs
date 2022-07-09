@@ -13,7 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
     [SerializeField] private float speed = 5f;
     private bool isFacingRight = false;
+
     
+
     void Awake()
     {
         playerInput = new PlayerInputAction();
@@ -55,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+        
     }
 
 }
