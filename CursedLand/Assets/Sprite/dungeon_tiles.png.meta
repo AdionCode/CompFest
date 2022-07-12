@@ -154,7 +154,7 @@ TextureImporter:
         width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -162,6 +162,48 @@ TextureImporter:
       bones: []
       spriteID: 10203dedd59113b46918faa1866f4f64
       internalID: -1558825946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeon_tiles_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 204
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd8dbd555755414e996fd8f9216239b
+      internalID: 2022224323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeon_tiles_4
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 204
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e877ee67299185840bdb0dcc679fb259
+      internalID: -315678750
       vertices: []
       indices: 
       edges: []
@@ -178,7 +220,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       dungeon_tiles_2: -1558825946
+      dungeon_tiles_3: 2022224323
       dungeon_tiles_1: -1904445218
+      dungeon_tiles_4: -315678750
       dungeon_tiles_0: -810786933
   spritePackingTag: 
   pSDRemoveMatte: 0
