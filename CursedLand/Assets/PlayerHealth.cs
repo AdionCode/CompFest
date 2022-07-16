@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
 	PlayerInputAction InputActions;
 
-	public int maxHealth = 130;
+	public int maxHealth = 100;
 	public int currentHealth;
 
 	public HealthBar healthBar;
@@ -18,13 +18,15 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 120;
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
-        InputActions.Player.Damage.performed += HandleDamage =>
-        {
-            Debug.Log("ADUH");
-            TakeDamage(20);
-        };
+        //InputActions.Player.Damage.performed += HandleDamage =>
+        //{
+        //    Debug.Log("ADUH");
+        //    TakeDamage(20);
+            
+        //};
     }
 
 
@@ -47,7 +49,8 @@ public class PlayerHealth : MonoBehaviour
 
 	public void TakeDamage(int damage)
 	{
-		currentHealth -= damage;
+        Debug.Log("ADUH");
+        currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
 	}

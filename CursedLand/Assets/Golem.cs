@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goblin : MonoBehaviour
+public class Golem : MonoBehaviour
 {
-    [SerializeField] private int attackDamage = 10;
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] private int attackDamage = 40;
+    [SerializeField] private float attackSpeed = 3f;
     private float canAttack;
     public float speed = 3f;
     private Transform target;
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
-            if (attackSpeed<=canAttack)
+            if (attackSpeed <= canAttack)
             {
                 collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
                 canAttack = 0f;
@@ -23,15 +23,15 @@ public class Goblin : MonoBehaviour
             {
                 canAttack += Time.deltaTime;
             }
-            
-            
+
+
         }
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             target = other.transform;
             Debug.Log("Masuk");
@@ -40,7 +40,7 @@ public class Goblin : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             target = null;
             Debug.Log("Keluar");
@@ -48,11 +48,11 @@ public class Goblin : MonoBehaviour
     }
     private void Update()
     {
-        if(target != null)
+        if (target != null)
         {
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, target.position, step);
         }
-        
+
     }
 }
