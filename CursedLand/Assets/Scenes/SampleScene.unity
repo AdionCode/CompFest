@@ -396,6 +396,9 @@ GameObject:
   m_Component:
   - component: {fileID: 409697034}
   - component: {fileID: 409697033}
+  - component: {fileID: 409697037}
+  - component: {fileID: 409697036}
+  - component: {fileID: 409697035}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Untagged
@@ -470,6 +473,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &409697035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409697032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22aeccf72383d24bae08f0022d01c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 40
+  attackSpeed: 3
+  speed: 3
+--- !u!58 &409697036
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409697032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.71
+--- !u!58 &409697037
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 409697032}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!1 &445900921
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.0894856, y: 1}
+    m_SensorSize: {x: 2.0988765, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -843,6 +893,7 @@ GameObject:
   - component: {fileID: 1174907097}
   - component: {fileID: 1174907096}
   - component: {fileID: 1174907095}
+  - component: {fileID: 1174907099}
   - component: {fileID: 1174907094}
   m_Layer: 0
   m_Name: Goblin
@@ -863,6 +914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735c256d099beaa42bc1a609c7e01a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackDamage: 10
+  attackSpeed: 1
   speed: 5
 --- !u!61 &1174907095
 BoxCollider2D:
@@ -871,10 +924,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174907093}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0393157, y: -0.21904492}
@@ -973,6 +1026,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1174907099
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174907093}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.625
 --- !u!1 &1492843301
 GameObject:
   m_ObjectHideFlags: 0

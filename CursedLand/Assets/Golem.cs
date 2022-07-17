@@ -10,31 +10,52 @@ public class Golem : MonoBehaviour
     public float speed = 3f;
     private Transform target;
 
-    private void OnCollisionStay2D(Collision2D collision)
+    public void Start()
     {
-        if (collision.gameObject.tag == "Player")
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //canAttack = attackSpeed;
+
+    }
+    //private void OnCollisionStay2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        if (attackSpeed <= canAttack)
+    //        {
+    //            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+    //            canAttack = 0f;
+    //        }
+    //        else
+    //        {
+    //            canAttack += Time.deltaTime;
+    //        }
+
+
+    //    }
+
+    //}
+
+    
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
         {
+            //target = other.transform;
+            //Debug.Log("Masuk");
+
             if (attackSpeed <= canAttack)
             {
-                collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                Debug.Log("HYA");
+                other.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
                 canAttack = 0f;
             }
             else
             {
+                //Debug.Log(canAttack);
+                //Debug.Log("CD");
                 canAttack += Time.deltaTime;
             }
-
-
-        }
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            target = other.transform;
-            Debug.Log("Masuk");
         }
     }
 
@@ -42,7 +63,7 @@ public class Golem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            target = null;
+            //target = null;
             Debug.Log("Keluar");
         }
     }

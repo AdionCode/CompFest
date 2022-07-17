@@ -14,13 +14,16 @@ public class Goblin : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            //Debug.Log("inRange");
             if (attackSpeed<=canAttack)
             {
+                Debug.Log("NYEH");
                 collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
                 canAttack = 0f;
             }
             else
             {
+                //Debug.Log("gob_CD");
                 canAttack += Time.deltaTime;
             }
             
