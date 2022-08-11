@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,9 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 velocity;
 
     private float horizontal;
-    [SerializeField] private float speed = 5f;
-    private bool isFacingRight = false;
+    private bool isFacingRight = true;
+    [SerializeField]
+    //private InputActionReference movement, attack, pointerPosition;
+    private float speed = 5f;
+    
+    
 
+    
     
 
     void Awake()
@@ -35,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
+        //Vector2 mousePosition = GetPointerInput();
         Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
 
         horizontal = moveInput.x;
@@ -49,6 +55,9 @@ public class PlayerMovement : MonoBehaviour
         {
             flip();
         }
+
+        //if(attack.action.IsPressed)
+
     }
 
     private void flip()
@@ -58,6 +67,15 @@ public class PlayerMovement : MonoBehaviour
         localScale.x *= -1f;
         transform.localScale = localScale;
         
+        
     }
+
+    //private Vector2 GetPointerInput()
+    //{
+    //    Vector3 mousePos = pointerPosition.action.ReadValue<Vector2>();
+    //    mousePos.z = Camera.main.nearClipPlane;
+    //    return Camera.main.ScreenToWorldPoint(mousePos);
+    //}
+   
 
 }
