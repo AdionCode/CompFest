@@ -196,7 +196,7 @@ TextureImporter:
         width: 23
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -204,6 +204,27 @@ TextureImporter:
       bones: []
       spriteID: e877ee67299185840bdb0dcc679fb259
       internalID: -315678750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 182
+        width: 18
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920999674c26a3f4f911beaa62aa5546
+      internalID: -1119288260
       vertices: []
       indices: 
       edges: []
@@ -221,6 +242,7 @@ TextureImporter:
     nameFileIdTable:
       dungeon_tiles_2: -1558825946
       dungeon_tiles_3: 2022224323
+      NPC: -1119288260
       dungeon_tiles_1: -1904445218
       dungeon_tiles_4: -315678750
       dungeon_tiles_0: -810786933

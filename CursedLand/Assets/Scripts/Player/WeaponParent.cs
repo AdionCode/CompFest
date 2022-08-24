@@ -15,6 +15,9 @@ public class WeaponParent : MonoBehaviour
 
     public bool IsAttacking { get; private set; }
 
+    [SerializeField]
+    public int dmg;
+
     public void ResetIsAttacking()
     {
         IsAttacking = false;
@@ -52,6 +55,7 @@ public class WeaponParent : MonoBehaviour
         IsAttacking=true;
         attackBlocked = true;
         StartCoroutine(DelayAttack());
+        DetectColliders(dmg);
     }
 
     private IEnumerator DelayAttack()
@@ -67,15 +71,16 @@ public class WeaponParent : MonoBehaviour
         Gizmos.DrawWireSphere(position, radius);
     }
 
-    public void DetectColliders()
+    public void DetectColliders(int dmg)
     {
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circleOrigin.position,radius))
         {
             Debug.Log(collider.name);
+            Debug.Log(dmg);
             Health health;
             if(health = collider.GetComponent<Health>())
             {
-                health.GetHit(25, transform.parent.gameObject);
+                health.GetHit(dmg, transform.parent.gameObject);
             }
         }
     }

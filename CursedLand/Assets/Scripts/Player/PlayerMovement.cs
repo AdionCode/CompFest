@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     [SerializeField]
     //private InputActionReference movement, attack, pointerPosition;
-    private float speed = 5f;
+    public float speed = 6f;
     
     
 
@@ -40,6 +40,11 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
+        //if(DialogueManager.GetInstance().dialogueIsPlaying)
+        //{
+        //    return;
+        //}
+
         //Vector2 mousePosition = GetPointerInput();
         Vector2 moveInput = playerInput.Player.Move.ReadValue<Vector2>();
 
@@ -47,14 +52,15 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = moveInput * speed;
 
-        if (!isFacingRight && horizontal > 0f)
-        {
-            flip();
-        }
-        else if(isFacingRight && horizontal < 0f)
-        {
-            flip();
-        }
+        Debug.Log(speed);
+        //if (!isFacingRight && horizontal > 0f)
+        //{
+        //    flip();
+        //}
+        //else if(isFacingRight && horizontal < 0f)
+        //{
+        //    flip();
+        //}
 
         //if(attack.action.IsPressed)
 
