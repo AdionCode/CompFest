@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     private Vector2 pointerInput;
 
     private WeaponParent weaponParent;
+    private PlayerMovement playerMovement;
 
     [SerializeField]
     InputActionReference attack;
@@ -19,12 +20,17 @@ public class PlayerInput : MonoBehaviour
     {
         InputActions = new PlayerInputAction();
         weaponParent = GetComponentInChildren<WeaponParent>();
+        playerMovement = GetComponentInChildren<PlayerMovement>();
     }
     private void OnEnable()
     {
         InputActions.Player.Damage.Enable();
         InputActions.Player.PointerPosition.Enable();
         InputActions.Player.Fire.Enable();
+
+        InputActions.Player.Debug2.Enable();
+        InputActions.Player.Debug3.Enable();
+        InputActions.Player.Debug1.Enable();
     }
 
     private void OnDisable()
@@ -33,6 +39,10 @@ public class PlayerInput : MonoBehaviour
         InputActions.Player.Damage.Disable();
         InputActions.Player.PointerPosition.Disable();
         InputActions.Player.Fire.Disable();
+
+        InputActions.Player.Debug1.Disable();
+        InputActions.Player.Debug2.Disable();
+        InputActions.Player.Debug3.Disable();
     }
 
    
@@ -58,10 +68,35 @@ public class PlayerInput : MonoBehaviour
             Debug.Log("TEKEN");
         };
 
+        InputActions.Player.Debug1.performed += HandleDebug1 =>
+        {
+            Debug.Log("NAH Debug 1, POWER");
+            weaponParent.dmg = 50;
+        };
+
+        InputActions.Player.Debug2.performed += HandleDebug2 =>
+        {
+            Debug.Log("NIH DEBUG 2, AGILITY");
+            playerMovement.speed /= 2;
+            StartCoroutine(GetBuffSpd());
+        };
+
+        InputActions.Player.Debug3.performed += HandleDebug3 =>
+        {
+            Debug.Log("NOH Debug 3, ???");
+
+        };
+
         InputActions.Player.Fire.performed += HandleAttack =>
         {
             weaponParent.Attack();
         };
 
+    }
+
+    private IEnumerator GetBuffSpd()
+    {
+        yield return new WaitForSeconds(5f);
+        playerMovement.speed *= 3;
     }
 }
