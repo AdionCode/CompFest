@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = moveInput * speed;
 
-        Debug.Log(speed);
+        //Debug.Log(speed);
         //if (!isFacingRight && horizontal > 0f)
         //{
         //    flip();

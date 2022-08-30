@@ -12,6 +12,9 @@ public class PlayerInput : MonoBehaviour
 
     private WeaponParent weaponParent;
     private PlayerMovement playerMovement;
+    //private TimeManager timeManager;
+
+    public bool isPause = false;
 
     [SerializeField]
     InputActionReference attack;
@@ -51,6 +54,18 @@ public class PlayerInput : MonoBehaviour
     {
         pointerInput = GetPointerInput();
         weaponParent.PointerPosition = pointerInput;
+        //if (TimeManager.GetInstance().isNight)
+        //{
+        //   TogglePause();
+        //}
+        if (isPause)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
 
     private Vector2 GetPointerInput()
@@ -66,6 +81,7 @@ public class PlayerInput : MonoBehaviour
         InputActions.Player.Damage.performed += HandleDamage =>
         {
             Debug.Log("TEKEN");
+            Time.timeScale = 1;
         };
 
         InputActions.Player.Debug1.performed += HandleDebug1 =>
@@ -83,8 +99,9 @@ public class PlayerInput : MonoBehaviour
 
         InputActions.Player.Debug3.performed += HandleDebug3 =>
         {
-            Debug.Log("NOH Debug 3, ???");
-
+            Debug.Log("Pause Pencet");
+            //isPause = !isPause;
+            TogglePause();
         };
 
         InputActions.Player.Fire.performed += HandleAttack =>
@@ -92,6 +109,12 @@ public class PlayerInput : MonoBehaviour
             weaponParent.Attack();
         };
 
+    }
+
+    private void TogglePause()
+    {
+        Debug.Log("Masuk Toggle");
+        isPause = !isPause;
     }
 
     private IEnumerator GetBuffSpd()
