@@ -15,5 +15,10 @@ public class loadScene : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     
 }
