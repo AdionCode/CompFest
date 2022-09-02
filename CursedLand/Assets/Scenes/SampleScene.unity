@@ -341,7 +341,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 29136626}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1798137551}
+        m_TargetAssemblyTypeName: CurseControl, Assembly-CSharp
+        m_MethodName: ChooseSpeedBuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &29136626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -418,7 +430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.3, y: -36.3}
+  m_AnchoredPosition: {x: 106, y: -26}
   m_SizeDelta: {x: 152.7702, y: 25.434494}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &58401462
@@ -678,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190.22339, y: 92.433014}
+  m_AnchoredPosition: {x: 189, y: 101}
   m_SizeDelta: {x: 97.5532, y: 97.553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &127580238
@@ -1003,7 +1015,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372398729}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1798137551}
+        m_TargetAssemblyTypeName: CurseControl, Assembly-CSharp
+        m_MethodName: ChooseCoinBuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372398729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2088,6 +2112,7 @@ Transform:
   - {fileID: 898165152}
   - {fileID: 420733505}
   - {fileID: 483942490}
+  - {fileID: 1798137552}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2174,7 +2199,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 836620235}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1798137551}
+        m_TargetAssemblyTypeName: CurseControl, Assembly-CSharp
+        m_MethodName: ChooseHealthBuff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &836620235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,7 +3136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 189, y: 92.433}
+  m_AnchoredPosition: {x: 187.77661, y: 100.999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1492843301
@@ -3842,6 +3879,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690727837}
   m_CullTransparentMesh: 1
+--- !u!1 &1798137550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1798137552}
+  - component: {fileID: 1798137551}
+  m_Layer: 0
+  m_Name: CurseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1798137551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798137550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75fd21a842fb9b64abf500ca88d7f960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Time: {fileID: 483942491}
+  CurseUi: {fileID: 1651790081}
+  HealthBuff: {fileID: 1868469318}
+  MovementBuff: {fileID: 1868469317}
+  isChoosed: 0
+--- !u!4 &1798137552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798137550}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 832703408}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824575439
 GameObject:
   m_ObjectHideFlags: 0
