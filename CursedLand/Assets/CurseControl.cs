@@ -8,8 +8,15 @@ public class CurseControl : MonoBehaviour
     [SerializeField] GameObject CurseUi;
     [SerializeField] PlayerHealth HealthBuff;
     [SerializeField] PlayerMovement MovementBuff;
+    [SerializeField] WeaponParent AttackBuff;
 
     [SerializeField] bool isChoosed = false;
+
+    [Header("Tweaking Variable")]
+    [SerializeField] int HealthMaxBuff = 10;
+    [SerializeField] int HealthRestoreBuff = 10;
+    [SerializeField] float SpeedUpBuff = 0.01f;
+
 
     void Start()
     {
@@ -43,20 +50,23 @@ public class CurseControl : MonoBehaviour
 
     public void ChooseHealthBuff()
     {
-        HealthBuff.maxHealth += 10;
+        HealthBuff.maxHealth += HealthMaxBuff;
+        HealthBuff.currentHealth += HealthRestoreBuff;
         isChoosed = true;
         CurseUi.SetActive(false);
     }
 
     public void ChooseSpeedBuff()
     {
-        MovementBuff.speed += 10;
+        MovementBuff.speed += SpeedUpBuff;
         isChoosed = true;
         CurseUi.SetActive(false);
     }
 
-    public void ChooseCoinBuff()
+    public void ChooseAttackBuff()
     {
-
+        AttackBuff.dmg += 10;
+        isChoosed = true;
+        CurseUi.SetActive(false);
     }
 }
