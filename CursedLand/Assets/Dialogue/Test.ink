@@ -1,2 +1,2 @@
-Ini testing
-ya.. test
+Choose Your Curse!!
+Canda gan ehe
