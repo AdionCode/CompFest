@@ -63,6 +63,7 @@ public class TimeManager : MonoBehaviour
     private IEnumerator StartNight()
     {
         yield return new WaitForSeconds(5f);
+
         isDay = false;
         isNight = true;
         Debug.Log("Sekarang Malam");
@@ -70,4 +71,6 @@ public class TimeManager : MonoBehaviour
         //NightPanel.SetActive(true);
         //DayPanel.SetActive(false);
     }
+
+    
 }

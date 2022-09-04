@@ -122,4 +122,10 @@ public class PlayerInput : MonoBehaviour
         yield return new WaitForSeconds(5f);
         playerMovement.speed *= 3;
     }
+
+    public void testing()
+    {
+        Debug.Log("Masuk Testing");
+        TogglePause();
+    }
 }

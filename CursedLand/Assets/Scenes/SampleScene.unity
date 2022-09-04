@@ -2104,7 +2104,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.490511, y: 1}
+    m_SensorSize: {x: 2.6104515, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2153,7 +2153,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 483942489}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5587,15 +5587,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fd21a842fb9b64abf500ca88d7f960, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Time: {fileID: 483942491}
+  TimeM: {fileID: 483942491}
   CurseUi: {fileID: 1651790081}
   HealthBuff: {fileID: 1868469318}
   MovementBuff: {fileID: 1868469317}
   AttackBuff: {fileID: 233367215}
+  playerInput: {fileID: 1868469319}
   isChoosed: 0
+  isPause: 0
   HealthMaxBuff: 10
-  HealthRestoreBuff: 10
-  SpeedUpBuff: 0.25
 --- !u!4 &1798137552
 Transform:
   m_ObjectHideFlags: 0
