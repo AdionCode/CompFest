@@ -8,8 +8,24 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject DayPanel;
     [SerializeField] private GameObject NightPanel;
 
-    public bool isDay, isNight;  
+    public bool isDay, isNight;
     // Start is called before the first frame update
+    private static TimeManager instance;
+    //private PlayerInput playerInput;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("Found more than one Time Manager in the scene");
+        }
+        instance = this;
+    }
+
+    public static TimeManager GetInstance()
+    {
+        return instance;
+    }
     void Start()
     {
         isDay = true;
@@ -36,7 +52,7 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         isNight = false;
         isDay = true;
-
+        Debug.Log("Sekarang Siang");
         StartCoroutine(StartNight());
         //NightPanel.SetActive(false);
         //DayPanel.SetActive(true);
@@ -49,7 +65,7 @@ public class TimeManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         isDay = false;
         isNight = true;
-
+        Debug.Log("Sekarang Malam");
         StartCoroutine(StartDay());
         //NightPanel.SetActive(true);
         //DayPanel.SetActive(false);
